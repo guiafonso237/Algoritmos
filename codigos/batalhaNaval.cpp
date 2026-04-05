@@ -15,12 +15,12 @@ struct Casas{
 void most(int);
 void gerarNav(short);
 void atk();
-bool endG(int , int);
+bool endG(int);
 
 Casas cas[8][8];
 
 int main() {
-  short dif, tent, jog=0, opa=0;
+  short dif, tent, jog=0;
   cout<<"Digite a dificuldade\nFacil - 0\nMedio - 1\nDificil - 2\n";
   cin>>dif;
   switch (dif){
@@ -43,7 +43,7 @@ int main() {
     most(tent-jog);
     atk();
     jog++;
-    if(endG(tent-jog, nav-k)){
+    if(endG(tent-jog)){
       cout<<"\nVoce Perdeu!!!\n";
       return 0;
     }
@@ -128,7 +128,7 @@ void atk(){
   }
 }
 
-bool endG(int tent, int jog){
+bool endG(int tent){
   if(tent==0){
     return 1;
   } else if(nav-k==0){
